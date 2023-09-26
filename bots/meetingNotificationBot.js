@@ -25,6 +25,8 @@ class MeetingNotificationBot extends TeamsActivityHandler {
         TurnContext.removeRecipientMention(context.activity);
 
         if (context.activity.text.trim() == "SendTargetedNotification") {
+          console.log("base url1=");
+          console.log("base url2= ", this.baseUrl);
           var meetingMembers = await TeamsInfo.getPagedMembers(context);
           let tenantId = context.activity.channelData.tenant.id;
 
